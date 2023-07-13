@@ -44,7 +44,6 @@ function MenuAdministrador() {
           <h1>GESTIÓN DE LABORATORIOS</h1>
         </div>
         <div className='accordion' id='accordionExample'>
-
           <div className='accordion-item bg-black bg-opacity-50'>
             <h2 className='accordion-header' id='headingOne'>
               <button className='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne'>

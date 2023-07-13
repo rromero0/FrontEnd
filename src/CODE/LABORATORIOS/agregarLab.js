@@ -59,7 +59,7 @@ const AgregarLaboratorio = ({ onLaboratorioAgregado }) => {
   };
 
   return (
-    <div><br/>
+    <div><br/><br/><br/><br/>
       <form>
         <p className='fs-2 text-center'>AGREGAR LABORATORIO</p>
         <div className='form-group p-2'>
@@ -100,8 +100,8 @@ const AgregarLaboratorio = ({ onLaboratorioAgregado }) => {
         </div>
       </form>
       {alertaVisible && (
-        <div className="alert alert-danger text-center" role="alert">
-          <svg className='' width="24" height="25" role="img" aria-label="Danger:">
+        <div className="alert alert-danger d-flex align-items-center" role="alert">
+          <svg width="24" height="24" role="img" aria-label="Danger:">
             <use xlinkHref="#exclamation-triangle-fill" />
           </svg>
           <div>

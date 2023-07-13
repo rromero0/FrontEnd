@@ -7,6 +7,7 @@ import ModificarLaboratorio from './modificarLab';
 
 const ListadoLaboratorios = () => {
   const [laboratorios, setLaboratorios] = useState([]);
+  const [filtroLaboratorio, setFiltroLaboratorio] = useState('');
 
   useEffect(() => {
     obtenerLaboratorios();
@@ -37,12 +38,36 @@ const ListadoLaboratorios = () => {
     obtenerLaboratorios();
   };
 
+  const handleFiltroLaboratorioChange = (e) => {
+    setFiltroLaboratorio(e.target.value);
+  };
+
+  const laboratoriosFiltrados = laboratorios.filter(laboratorio =>
+    filtroLaboratorio ? laboratorio.id === parseInt(filtroLaboratorio) : true
+  );
+
   return (
     <div className='row'>
       <p className='fs-2'>Listado de Laboratorios</p>
       <div className='col-10 table-responsive'>
+        <div className='col-3'>
+          <label htmlFor='filtroLaboratorio' className='fs-4 text-center'>Filtrar por nombre:</label>
+          <select
+            id='filtroLaboratorio'
+            className='form-select fs-6'
+            value={filtroLaboratorio}
+            onChange={handleFiltroLaboratorioChange}
+          >
+            <option value=''>Todos los laboratorios</option>
+            {laboratorios.map(laboratorio => (
+              <option key={laboratorio.id} value={laboratorio.id}>
+                {laboratorio.nombre}
+              </option>
+            ))}
+          </select><br/>
+        </div>
         <table className="table table-dark table-striped table-hover caption-top align-middle">
-        
+
           <thead>
             <tr>
               <th className="w-50">Nombre</th>
@@ -53,7 +78,7 @@ const ListadoLaboratorios = () => {
             </tr>
           </thead>
           <tbody>
-            {laboratorios.map(laboratorio => (
+            {laboratoriosFiltrados.map(laboratorio => (
               <tr key={laboratorio.id}>
                 <td>{laboratorio.nombre}</td>
                 <td>{laboratorio.ubicacion}</td>

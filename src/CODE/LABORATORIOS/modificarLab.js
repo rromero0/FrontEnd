@@ -90,11 +90,10 @@ const ModificarLaboratorio = ({ laboratorio, onLaboratorioModificado }) => {
       {modalVisible && (
         <div className="modal my-5" id="modal" tabIndex="-1" role="dialog" style={{ display: 'block' }}>
           <div className="modal-dialog" role="document">
-            <div className="modal-content  bg-secondary bg-opacity-75 border border-white">
+            <div className="modal-content bg-secondary bg-opacity-75 border border-white">
               <div className="modal-header bg-secondary">
                 <h5 className="modal-title fs-3 mx-2" style={{ color: 'white' }}>MODIFICAR LABORATORIO</h5>
                 <button type="button" className="close btn-close btn-close-white p-3" aria-label="Cerrar" onClick={handleCancelar}>
-
                 </button>
               </div>
               <div className="modal-body">

@@ -145,9 +145,9 @@ const AgregarReserva = ({ onReservaAgregada }) => {
         </div>
       </form>
       {alertaVisible && (
-        <div className='alert alert-danger d-flex align-items-center' role='alert'>
-          <svg className='bi flex-shrink-0 me-2' width='24' height='24' role='img' aria-label='Danger:'>
-            <use xlinkHref='#exclamation-triangle-fill' />
+        <div className="alert alert-danger d-flex align-items-center" role="alert">
+        <svg width="24" height="24" role="img" aria-label="Danger:">
+          <use xlinkHref="#exclamation-triangle-fill" />
           </svg>
           <div>Por favor, complete todos los campos.</div>
         </div>
