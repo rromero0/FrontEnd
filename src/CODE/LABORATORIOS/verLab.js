@@ -39,12 +39,10 @@ const ListadoLaboratorios = () => {
 
   return (
     <div className='row'>
-      <div className='col-10 table-responsive'
-        style={{ background: "transparent" }}>
-        <table className="table table-dark table-md table-striped table-hover caption-top align-middle">
-          <caption style={{ color: "Black", textAlign: "left", fontSize: "30px" }}>
-            Listado de laboratorios
-          </caption>
+      <p className='fs-2'>Listado de Laboratorios</p>
+      <div className='col-10 table-responsive'>
+        <table className="table table-dark table-striped table-hover caption-top align-middle">
+        
           <thead>
             <tr>
               <th className="w-50">Nombre</th>
@@ -57,13 +55,13 @@ const ListadoLaboratorios = () => {
           <tbody>
             {laboratorios.map(laboratorio => (
               <tr key={laboratorio.id}>
-                <td className='p-4'>{laboratorio.nombre}</td>
-                <td className='p-1'>{laboratorio.ubicacion}</td>
-                <td className='p-1'>{laboratorio.capacidad}</td>
-                <td className='p-0'>
+                <td>{laboratorio.nombre}</td>
+                <td>{laboratorio.ubicacion}</td>
+                <td>{laboratorio.capacidad}</td>
+                <td>
                   <ModificarLaboratorio laboratorio={laboratorio} onLaboratorioModificado={handleLaboratorioModificado} />
                 </td>
-                <td className='p-1'>
+                <td>
                   <EliminarLaboratorio laboratorioId={laboratorio.id} onLaboratorioEliminado={handleLaboratorioEliminado} />
                 </td>
               </tr>

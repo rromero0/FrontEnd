@@ -121,7 +121,7 @@ const ModificarReserva = ({ reserva, onReservaModificada }) => {
 
   return (
     <div>
-      <button className="btn btn-warning m-1" onClick={handleModificar}>
+      <button className="btn btn-warning btn-sm m-1 p-2" onClick={handleModificar}>
         Modificar
       </button>
       {modalVisible && (

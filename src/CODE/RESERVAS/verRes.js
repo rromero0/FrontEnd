@@ -89,14 +89,14 @@ const ListadoReservas = () => {
 
   return (
     <div>
-      <h2>Listado de Reservas</h2>
+      <p className='fs-2'>Listado de Reservas</p>
       <div className='row align-items-start'>
-        <div className='col-4'>
-          <label>Filtrar por Laboratorio:</label>
+        <div className='col-3 '>
+          <label className='fs-4 text-center'>Filtrar por laboratorio:</label>
           <select
             value={filtroLaboratorio}
             onChange={handleFiltroLaboratorioChange}
-            className='form-control'
+            className=' form-select fs-6'
           >
             <option value=''>Todos los laboratorios</option>
             {laboratorios.map((lab) => (
@@ -106,38 +106,37 @@ const ListadoReservas = () => {
             ))}
           </select>
         </div>
-        <div className='col-4'>
-          <label>Filtrar por Fecha:</label>
-          <input
-            type='date'
-            value={filtroFecha}
-            onChange={handleFiltroFechaChange}
-            className='form-control'
-          />
-        </div>
-        <div className='col-4'>
-          <label>Filtrar por Estado:</label>
+        <div className='col-3'>
+          <label className='fs-4 text-center'>Filtrar por estado:</label>
           <select
             value={filtroEstado}
             onChange={handleFiltroEstadoChange}
-            className='form-control'
+            className='form-select fs-6'
           >
             <option value=''>Todos los estados</option>
             <option value='activo'>Activo</option>
             <option value='inactivo'>Inactivo</option>
           </select>
         </div>
-        <div className='col-10 table-responsive'>
+        <div className='col-2 '>
+          <label className='fs-4 text-center'>Filtrar por fecha:</label>
+          <input
+            type='date'
+            value={filtroFecha}
+            onChange={handleFiltroFechaChange}
+            className='form-select  fs-6 '
+          />
+        </div>
+        <div className='col-10 table-responsive'><br/>
           <table className='table table-dark table-striped table-hover caption-top align-middle'>
-            <caption>Listado de reservas</caption>
-            <thead>
+            <thead className=''>
               <tr>
                 <th className='w-25'>Laboratorio</th>
                 <th className='w-25'>Docente</th>
-                <th className='w-25'>Fecha Reserva</th>
-                <th className='w-25'>Bloque</th>
+                <th className='w-25 text-center'>Fecha Reserva</th>
+                <th className='w-25 text-center'>Bloque</th>
                 <th className='w-25'>Estado</th>
-                <th>Modificar</th>
+                <th className='w-25 text-center'>Modificar</th>
               </tr>
             </thead>
             <tbody>
@@ -150,10 +149,10 @@ const ListadoReservas = () => {
                   <tr key={reserva.id}>
                     <td>{laboratorio ? laboratorio.nombre : ''}</td>
                     <td>{docente ? `${docente.nombre} ${docente.apellido}` : ''}</td>
-                    <td>{reserva.fecha_reserva}</td>
-                    <td>{reserva.bloque}</td>
+                    <td className='text-center'>{reserva.fecha_reserva}</td>
+                    <td className='text-center'>{reserva.bloque}</td>
                     <td className={claseEstado}>{reserva.estado ? 'Activo' : 'Inactivo'}</td>
-                    <td>
+                    <td className='text-center'>
                       <ModificarReserva
                         reserva={reserva}
                         onReservaModificada={handleReservaModificada}
