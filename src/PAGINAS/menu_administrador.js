@@ -42,7 +42,7 @@ function MenuAdministrador() {
         <div className='cerrarSesion'>
           <div className="row align-items-center">
             <div className="col">
-              <h1>GESTIÓN DE LABORATORIOS</h1>
+              <h1>GESTIÓN DE RESERVAS DE LABORATORIOS</h1>
             </div>
             <div className="col-auto">
               <button id='btn_exit' className='btn btn-outline-light' onClick={cerrarSesion}>

@@ -74,7 +74,7 @@ class Login extends React.Component {
                 <div className="titulo mb-4">
                   <h2 className='fs-1 mb-5'>UNIVERSIDAD DE MAGALLANES</h2>
                 </div>
-                <h2 className='mt-3' style={{ color: "white" }}>Gestion de reservas de laboratorios</h2>
+                <h2 className='mt-3' style={{ color: "white" }}>Gestión de reservas de laboratorios</h2>
                 <br/><br />
                 <p className="fs-4 text-start">
                 Esta es una herramienta útil y eficaz para optimizar tus procesos de reserva.<br/><br/>

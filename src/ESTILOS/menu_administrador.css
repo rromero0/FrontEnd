@@ -21,8 +21,11 @@ h1{
 #btn_exit{
     width: 150px;
 }
-.accordion-button{
-    border-color: black;
+.accordion-header{
+    border-bottom:1px solid black;
+}
+#headingFor{
+    border-bottom: none;
 }
 .accordion-header button:hover{
     background-color: rgba(13, 17, 250, 0);

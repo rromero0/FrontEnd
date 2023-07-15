@@ -11,13 +11,11 @@ const EliminarDocente = ({ docenteId, onDocenteEliminado }) => {
         .then(response => {
           // El docente se eliminó exitosamente
           console.log('Docente eliminado:', response.data);
-          // Aquí puedes realizar acciones adicionales después de eliminar el docente, si es necesario.
-          onDocenteEliminado(); // Llamar a la función para actualizar la lista de docentes
+          onDocenteEliminado(); // Actualizar la lista de docentes
         })
         .catch(error => {
           // Ocurrió un error al eliminar el docente
           console.error('Error al eliminar el docente:', error);
-          // Aquí puedes manejar el error de acuerdo a tus necesidades.
         });
     }
   };

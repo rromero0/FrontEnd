@@ -35,8 +35,6 @@
   text-align: center;
 }
 #login{
-  background: #000000cf;  /* fallback para navegadores antiguos */
-  background: -webkit-linear-gradient(to left, #ffffff3c, #000000fe, #000000fe, #000000);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #9a9a9a66, rgba(0, 0, 0, 0.652), rgba(0, 0, 0, 0.652), 
             rgba(0, 0, 0, 0.652), rgba(0, 0, 0, 0.652), rgba(0, 0, 0, 0.652), rgba(0, 0, 0, 0.652),
             rgba(0, 0, 0, 0.652), #9a9a9a66); /*Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */

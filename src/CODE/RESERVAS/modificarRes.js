@@ -134,10 +134,11 @@ const ModificarReserva = ({ reserva, onReservaModificada }) => {
       {modalVisible && (
         <div className="modal my-5" id="modal" tabIndex="-1" role="dialog" style={{ display: 'block' }}>
           <div className="modal-dialog" role="document">
-            <div className="modal-content bg-secondary bg-opacity-75 border border-white">
-              <div className="modal-header bg-secondary">
-                <h5 className="modal-title fs-3 mx-2" style={{ color: 'white' }}>Modificar Reserva</h5>
-                <button type="button" className="close btn-close btn-close-white p-3" onClick={handleCancelar}>
+          <div className="modal-content border border-white" style={{ height: '800px', background: 'linear-gradient(to right, #ffffff, #000000, rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), #000000, #ffffff)' }}>
+              <div className="modal-header">
+                <h5 className="modal-title fs-3" style={{ color: 'white', marginLeft: '100px' }}>Modificar Reserva</h5>
+                <button type="button" className="close" aria-label="Cerrar" style={{ backgroundColor: 'transparent', border: 'none' }} onClick={handleCancelar}>
+                  <span className='fs-1' style={{ color: 'red', marginTop: '10px' }}>&times;</span>
                 </button>
               </div>
               <div className="modal-body">
