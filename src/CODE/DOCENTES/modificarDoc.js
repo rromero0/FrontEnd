@@ -22,17 +22,11 @@ const ModificarDocente = ({ docente, onDocenteModificado }) => {
     axios
       .get('https://apilab-backend-sandbox.up.railway.app/obtenercarreras')
       .then(response => {
-        console.log('Carreras obtenidas:', response.data);
         setCarreras(response.data);
       })
       .catch(error => {
         console.error('Error al obtener las carreras:', error);
       });
-  };
-
-  const obtenerNombreCarrera = (idCarrera) => {
-    const carrera = carreras.find(c => c.id === idCarrera);
-    return carrera ? carrera.nombre : '';
   };
 
   const handleModificar = () => {

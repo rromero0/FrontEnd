@@ -11,6 +11,7 @@ const ModificarReserva = ({ reserva, onReservaModificada }) => {
   const [estadoReserva, setEstadoReserva] = useState(reserva.estado);
   const [modalVisible, setModalVisible] = useState(false);
   const [alertaVisible, setAlertaVisible] = useState(false);
+  const [alertaFechaPasada, setAlertaFechaPasada] = useState(false);
 
   const MAX_CARACTERES_FECHA = 10;
 
@@ -23,7 +24,6 @@ const ModificarReserva = ({ reserva, onReservaModificada }) => {
     axios
       .get('https://apilab-backend-sandbox.up.railway.app/obtenerlaboratorios')
       .then(response => {
-        console.log('Laboratorios obtenidos:', response.data);
         setLaboratorios(response.data);
       })
       .catch(error => {
@@ -35,7 +35,6 @@ const ModificarReserva = ({ reserva, onReservaModificada }) => {
     axios
       .get('https://apilab-backend-sandbox.up.railway.app/obtenerprofesores')
       .then(response => {
-        console.log('Docentes obtenidos:', response.data);
         setDocentes(response.data);
       })
       .catch(error => {
@@ -58,7 +57,14 @@ const ModificarReserva = ({ reserva, onReservaModificada }) => {
       return;
     }
 
-    const [horaInicio, horaFin] = bloque.split(' - ');
+    // Verificar si la fecha seleccionada es una fecha pasada
+    const fechaActual = new Date();
+    const fechaReserva = new Date(fecha);
+
+    if (fechaReserva < fechaActual) {
+      setAlertaFechaPasada(true);
+      return;
+    }
 
     const reservaModificada = {
       id_laboratorios: laboratorio,
@@ -88,6 +94,7 @@ const ModificarReserva = ({ reserva, onReservaModificada }) => {
   const cerrarModal = () => {
     setModalVisible(false);
     setAlertaVisible(false);
+    setAlertaFechaPasada(false);
   };
 
   const resetForm = () => {
@@ -157,7 +164,7 @@ const ModificarReserva = ({ reserva, onReservaModificada }) => {
                       </select>
                     </div>
                   </div>
-                  
+
                   <div className="form-group">
                     <label style={{ color: 'white' }}>Bloque:</label>
                     <div className='mx-5'>
@@ -196,6 +203,16 @@ const ModificarReserva = ({ reserva, onReservaModificada }) => {
                   </div>
                 </form>
               </div>
+              {alertaFechaPasada && (
+                <div className="alert alert-danger d-flex mx-5" role="alert">
+                  <svg className="text-center" width="24" height="24" role="img" aria-label="Danger:">
+                    <use xlinkHref="#exclamation-triangle-fill" />
+                  </svg>
+                  <div>
+                    No se puede reservar en una fecha pasada.
+                  </div>
+                </div>
+              )}
               {alertaVisible && (
                 <div className="alert alert-danger d-flex mx-5" role="alert">
                   <svg className="text-center" width="24" height="24" role="img" aria-label="Danger:">
