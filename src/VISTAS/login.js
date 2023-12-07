@@ -43,10 +43,10 @@ class Login extends React.Component {
       // Comparar la contraseña encriptada con la contraseña almacenada del usuario
       if (encryptedPassword === usuario.password) {
         // Establecer cookie de autenticación
-        Cookies.set('authToken', 'token_de_autenticacion', { expires: 1 }); // Establece una cookie con el nombre 'authToken' que expira en 1 día
+        Cookies.set('authToken', 'token_de_autenticacion', { expires: 1 }); // Establece una cookie con el nombre 'authToken'
         Cookies.set('rolUsuario', usuario.role); // Establece una cookie con el nombre 'rolUsuario' con el valor del rol del usuario
 
-        // Redireccionar al usuario a la página correspondiente
+        // Redirecciona al usuario a la página correspondiente
         if (usuario.role === 'administrador') {
           window.location.href = './menu_administrador'; // Redireccionar a la página del administrador
         } else if (usuario.role === 'docente') {

@@ -7,7 +7,7 @@ import ListadoLaboratorios from '../CODE/LABORATORIOS/verLab.js';
 import ListadoCarreras from '../CODE/CARRERAS/verCar.js';
 import ListadoDocentes from '../CODE/DOCENTES/verDoc.js';
 import ListadoReservas from '../CODE/RESERVAS/verRes.js';
-
+///////////////////////
 function MenuAdministrador() {
   const navigate = useNavigate();
 
@@ -45,22 +45,28 @@ function MenuAdministrador() {
               <h1>GESTIÓN DE RESERVAS DE LABORATORIOS</h1>
             </div>
             <div className="col-auto">
-              <button id='btn_exit' className='btn btn-outline-light' onClick={cerrarSesion}>
+              <button id='btn_exit' className='btn btn-outline-light mx-1' onClick={cerrarSesion}>
+                Gestion Usuarios
+              </button>
+              <button id='btn_exit' className='btn btn-outline-light mx-1' onClick={cerrarSesion}>
+                Reportes
+              </button>
+              <button id='btn_exit' className='btn btn-outline-light mx-1' onClick={cerrarSesion}>
                 Cerrar Sesión
               </button>
             </div>
           </div>
         </div>
 
-        <div className='accordion'>
-          <div className='accordion-item bg-black bg-opacity-50'>
-            <h2 className='accordion-header' id='headingOne'>
-              <button className='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='false' aria-controls='collapseOne'>
+        <div className="accordion" id="accordionExample">
+          <div className="accordion-item bg-black bg-opacity-50">
+            <h2 className="accordion-header" id="headingOne">
+            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                 LABORATORIOS
               </button>
             </h2>
-            <div id='collapseOne' className='accordion-collapse collapse' aria-labelledby='headingOne' data-bs-parent="#accordionFlushExample">
-              <div className='accordion-body'>
+            <div id="collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div className="accordion-body">
                 <div>
                   <ListadoLaboratorios />
                 </div>
@@ -68,14 +74,14 @@ function MenuAdministrador() {
             </div>
           </div>
 
-          <div className='accordion-item bg-black bg-opacity-50'>
-            <h2 className='accordion-header' id='headingTwo'>
-              <button className='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo'>
+          <div className="accordion-item bg-black bg-opacity-50">
+            <h2 className="accordion-header" id="headingTwo">
+            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                 CARRERAS
               </button>
             </h2>
-            <div id='collapseTwo' className='accordion-collapse collapse' aria-labelledby='headingTwo' data-bs-parent="#accordionFlushExample">
-              <div className='accordion-body'>
+            <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div className="accordion-body">
                 <div>
                   <ListadoCarreras />
                 </div>
@@ -84,14 +90,14 @@ function MenuAdministrador() {
           </div>
 
 
-          <div className='accordion-item bg-black bg-opacity-50'>
-            <h2 className='accordion-header' id='headingThree'>
-              <button className='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseThree' aria-expanded='false' aria-controls='collapseThree'>
+          <div className="accordion-item bg-black bg-opacity-50">
+            <h2 className="accordion-header" id="headingThree">
+            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                 DOCENTES
               </button>
             </h2>
-            <div id='collapseThree' className='accordion-collapse collapse' aria-labelledby='headingThree' data-bs-parent="#accordionFlushExample">
-              <div className='accordion-body'>
+            <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div className="accordion-body">
                 <div>
                   <ListadoDocentes />
                 </div>
@@ -99,14 +105,14 @@ function MenuAdministrador() {
             </div>
           </div>
 
-          <div className='accordion-item bg-black bg-opacity-50'>
-            <h2 className='accordion-header' id='headingFor'>
-              <button className='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseFor' aria-expanded='false' aria-controls='collapseFor' data-bs-parent="#accordionExample">
+          <div className="accordion-item bg-black bg-opacity-50">
+            <h2 className="accordion-header" id="headingFor">
+              <button className="accordion-button collapsed" type="button" data-bs-toggle='collapse' data-bs-target='#collapseFor' aria-expanded='false' aria-controls='collapseFor' data-bs-parent="#accordionExample">
                 RESERVAS
               </button>
             </h2>
-            <div id='collapseFor' className='accordion-collapse collapse' aria-labelledby='headingFor' data-bs-parent="#accordionFlushExample">
-              <div className='accordion-body'>
+            <div id="collapseFor" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div className="accordion-body">
                 <div>
                   <ListadoReservas />
                 </div>
@@ -114,11 +120,7 @@ function MenuAdministrador() {
             </div>
           </div>
         </div>
-
-        <br />
-
-        <br />
-
+        <br /><br />
       </div>
       <div className='footer footer-container'>
         <p> <i>Todos los derechos reservados © 2023 Universidad de Magallanes</i> </p>
