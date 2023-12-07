@@ -1,0 +1,54 @@
+.fond {
+  background-image: url("../IMAG/2022-04-09-umag.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  z-index: -1;
+
+}
+
+.terminos-condiciones-container {
+  color: white;
+  max-width: 1400px;
+  padding: 20px 15vw;
+  text-align: center;
+  background: linear-gradient(to left, #fffefe00, #000000d9,#000000e0,#000000e8,
+  #000000e0, #000000d0, #fffefe00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin: auto;
+}
+
+h1 {
+  font-size: 4vh;
+  margin: 20px 0px;
+  text-align: center;
+}
+
+h2{
+  font-size: 22px;
+  margin-top: 30px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+ul {
+  margin-bottom: 10px;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.btn-atras {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
