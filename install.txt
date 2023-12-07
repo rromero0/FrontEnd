@@ -19,7 +19,7 @@ git:
 
 git add .
 git status
-git commit -m  "comentario de prueba"
+git commit -m  "version 2 06-12-23"
 git push
 
 https://frontendaplilab-production.up.railway.app/
